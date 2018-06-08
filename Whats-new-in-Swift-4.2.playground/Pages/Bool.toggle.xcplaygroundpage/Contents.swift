@@ -1,11 +1,11 @@
 /*:
- [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ [目次](Table%20of%20contents) • [前へ](@previous) • [次へ](@next)
 
  # Bool.toggle
 
- [SE-0199](https://github.com/apple/swift-evolution/blob/master/proposals/0199-bool-toggle.md "Adding toggle to Bool") adds a mutating `toggle` method to `Bool`.
+ [SE-0199](https://github.com/apple/swift-evolution/blob/master/proposals/0199-bool-toggle.md "Adding toggle to Bool")によりmutatingな`toggle`メソッドが`Bool`に追加されました。
 
- This is especially useful if you need to toggle a boolean value deep inside a nested data structure because you don’t have to repeat the same expression on both sides of the assignment.
+ これは特にネストされたデータ構造の中の真偽値を切り替えたいときなど、代入文の左右に長い式を書かなくても済むといった点で役立ちます。
  */
 struct Layer {
     var isHidden = false
@@ -17,9 +17,9 @@ struct View {
 
 var view = View()
 
-// Before:
+// Swift4.1以前:
 view.layer.isHidden = !view.layer.isHidden
 view.layer.isHidden
 
-// Now:
+// Swift4.2:
 view.layer.isHidden.toggle()

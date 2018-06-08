@@ -1,7 +1,7 @@
 /*:
- [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ [目次](Table%20of%20contents) • [前へ](@previous) • [次へ](@next)
 
- # Random numbers
+ # 乱数
 
  Working with random numbers used to be a little painful in Swift because (a) you had to call C APIs directly and (b) there wasn’t a good cross-platform random number API.
 

@@ -3,32 +3,34 @@
 
  By [Ole Begemann](https://oleb.net) • June 2018\
  [Source on GitHub](https://github.com/ole/whats-new-in-swift-4-2)
+ 
+ 訳: [touyou](https://touyou.github.io/)
 
  ## Contents
 
  1. [`Bool.toggle`](Bool.toggle)
- 1. [Sequence and Collection algorithms](Sequence%20and%20Collection%20algorithms)
- 1. [Enumerating enum cases](Enumerating%20enum%20cases)
- 1. [Random numbers](Random%20numbers)
- 1. [Hashable redesign](Hashable%20redesign)
+ 1. [SequenceとCollectionのアルゴリズム](Sequence%20and%20Collection%20algorithms)
+ 1. [enumのcaseの列挙](Enumerating%20enum%20cases)
+ 1. [乱数](Random%20numbers)
+ 1. [Hashableのりデザイン](Hashable%20redesign)
  1. [Conditional conformance enhancements](Conditional%20conformance)
  1. [Dynamic member lookup](Dynamic%20member%20lookup)
- 1. [`#error` and `#warning`](%23error%20and%20%23warning)
+ 1. [`#error`と`#warning`](%23error%20and%20%23warning)
  1. [`MemoryLayout.offset(of:)`](MemoryLayout.offset)
  1. [`@inlinable`](inlinable)
- 1. [Immutable `withUnsafePointer`](Immutable%20withUnsafePointer)
+ 1. [Immutableな`withUnsafePointer`](Immutable%20withUnsafePointer)
 
 
- ## Requirements
+ ## 必須環境
 
- This playground requires Xcode 10 or a recent Swift 4.2 snapshot. Download the latest Xcode 10 beta from <https://developer.apple.com/download/> or a Swift 4.2 snapshot from <https://swift.org/download/#snapshots>.
+ このPlaygroundを動かすにはXcode10かSwift4.2のsnapshotが必要です。最新のXcode10 betaを<https://developer.apple.com/download/>でダウンロードするか、Swift4.2のsnapshotを<https://swift.org/download/#snapshots>からダウンロードしてください。
 
- ## Note
+ ## 注意事項
 
- This playground focuses on user-facing new features that can easily be demonstrated in a playground. Swift 4.2 ships with more changes, such as new Swift Package Manager features and many under-the-hood improvements.
+ このPlaygroundはユーザーが使える新機能を簡単に試せることを目的としています。Swift 4.2ではさらに多くの変更がリリースされており、その中にはたとえばSwift Package Managerの新機能やたくさんの内部での改善などが含まれています。
 
- Check out [the full changelog](https://github.com/apple/swift/blob/master/CHANGELOG.md), as well as [the complete list of proposals implemented for Swift 4.2](https://apple.github.io/swift-evolution/#?version=4.2) (which lists some proposals not mentioned in the changelog).
+ ぜひ[公式の変更履歴](https://github.com/apple/swift/blob/master/CHANGELOG.md)や[Swift4.2で実装されたProposalの一覧](https://apple.github.io/swift-evolution/#?version=4.2)を確認してみてください。（後者には変更履歴で言及されていないいくつかのProposalが載せられています。）
  */
 /*:
- [Next page](@next)
+ [次へ](@next)
  */
