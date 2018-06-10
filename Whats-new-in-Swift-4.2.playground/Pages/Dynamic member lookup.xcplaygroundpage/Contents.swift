@@ -1,5 +1,5 @@
 /*:
- [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ [目次](Table%20of%20contents) • [前へ](@previous) • [次へ](@next)
 
  # Dynamic member lookup
 

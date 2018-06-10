@@ -3,22 +3,22 @@
 
  # 乱数
 
- Working with random numbers used to be a little painful in Swift because (a) you had to call C APIs directly and (b) there wasn’t a good cross-platform random number API.
+ 今まで乱数をSwiftで扱うことは微妙な点が２つありました。一つはCのAPIを直接呼び出す必要があったこと、もう一つはいいクロスプラットフォームの乱数APIが存在しなかったことです。
 
- [SE-0202](https://github.com/apple/swift-evolution/blob/master/proposals/0202-random-unification.md "Random Unification") adds random number generation to the standard library.
+ [SE-0202](https://github.com/apple/swift-evolution/blob/master/proposals/0202-random-unification.md "Random Unification")は乱数命令を標準ライブラリに追加しました。
 
- ## Generating random numbers
+ ## 乱数を生成する
 
- All number types have a `random(in:)` method that returns a random number in the given range (with a uniform distribution by default):
+ 全ての数値型は与えられた範囲の乱数を返す`random(in:)`メソッドを持つようになりました（なおかつそれらは標準で偏りがないものになっています）:
  */
 Int.random(in: 1...1000)
 UInt8.random(in: .min ... .max)
 Double.random(in: 0..<1)
 
 /*:
-This API nicely protects you from a common error when generating random numbers, [modulo bias](https://www.quora.com/What-is-modulo-bias).
+このAPIは[modulo bias](https://www.quora.com/What-is-modulo-bias)という乱数生成に関するよくあるエラーをしっかりと防いでくれます。
 
- `Bool.random` is also a thing:
+ `Bool.random`も同じく実装されています:
  */
 func coinToss(count tossCount: Int) -> (heads: Int, tails: Int) {
     var result = (heads: 0, tails: 0)
@@ -37,27 +37,27 @@ let (heads, tails) = coinToss(count: 100)
 print("100 coin tosses — heads: \(heads), tails: \(tails)")
 
 /*:
- ## Random collection elements
+ ## ランダムなコレクションの要素
 
- Collections get a `randomElement` method (which returns an optional in case the collection is empty, like `min` and `max`):
+ コレクションには`randomElement`メソッドが実装されました（このメソッドはコレクションが空の場合に備えて`min`や`max`と同じようにオプショナルな値を返します）:
  */
 let emotions = "😀😂😊😍🤪😎😩😭😡"
 let randomEmotion = emotions.randomElement()!
 
 /*:
- Use the `shuffled` method to shuffle a collection:
+ コレクションをシャッフルするには`shuffles`メソッドが使用できます：
  */
 let numbers = 1...10
 let shuffled = numbers.shuffled()
 
 /*:
- ## Custom random number generators
+ ## カスタムできる乱数ジェネレーター
 
- The standard library ships with a default random number generator, `Random.default`, that is probably a good choice for most simple use cases.
+ 標準ライブラリには`Random.default`という単純な用途にはとてもいい乱数ジェネレーターがデフォルトで実装されます。
 
- If you have special requirements, you can implement your own random number generator by adopting the `RandomNumberGenerator` protocol. All APIs for generating random values provide an overload that allows users to pass in their preferred random number generator:
+ もし特別な用途がある場合、自分自身で乱数ジェネレーターを`RandomNumberGenerator`プロトコルを適用することで実装することができます。乱数生成の全てのAPIはユーザーに好きな乱数ジェネレーターでオーバーロードできる機能を提供しています:
  */
-/// A dummy random number generator that just mimics `Random.default`.
+/// たとえば`Random.default`を中で使っているだけの乱数ジェネレーターを次のように書きます
 struct MyRandomNumberGenerator: RandomNumberGenerator {
     var base = Random.default
     mutating func next() -> UInt64 {
@@ -69,9 +69,9 @@ var customRNG = MyRandomNumberGenerator()
 Int.random(in: 0...100, using: &customRNG)
 
 /*:
- ## Extending your own types
+ ## 自作の型に拡張する
 
- You can provide a random data API for your own types by following the same pattern:
+ もちろん同じように自作の型に対して次のようにランダムに関するAPIを実装することもできます:
  */
 enum Suit: String, CaseIterable {
     case diamonds = "♦"
@@ -94,5 +94,5 @@ let randomSuit = Suit.random()
 randomSuit.rawValue
 
 /*:
- [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ [目次](Table%20of%20contents) • [前へ](@previous) • [次へ](@next)
  */

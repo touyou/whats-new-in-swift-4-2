@@ -12,8 +12,8 @@
  1. [SequenceとCollectionのアルゴリズム](Sequence%20and%20Collection%20algorithms)
  1. [enumのcaseの列挙](Enumerating%20enum%20cases)
  1. [乱数](Random%20numbers)
- 1. [Hashableのりデザイン](Hashable%20redesign)
- 1. [Conditional conformance enhancements](Conditional%20conformance)
+ 1. [Hashableのリデザイン](Hashable%20redesign)
+ 1. [Conditional Conformanceに関する改善](Conditional%20conformance)
  1. [Dynamic member lookup](Dynamic%20member%20lookup)
  1. [`#error`と`#warning`](%23error%20and%20%23warning)
  1. [`MemoryLayout.offset(of:)`](MemoryLayout.offset)
@@ -30,6 +30,11 @@
  このPlaygroundはユーザーが使える新機能を簡単に試せることを目的としています。Swift 4.2ではさらに多くの変更がリリースされており、その中にはたとえばSwift Package Managerの新機能やたくさんの内部での改善などが含まれています。
 
  ぜひ[公式の変更履歴](https://github.com/apple/swift/blob/master/CHANGELOG.md)や[Swift4.2で実装されたProposalの一覧](https://apple.github.io/swift-evolution/#?version=4.2)を確認してみてください。（後者には変更履歴で言及されていないいくつかのProposalが載せられています。）
+
+ ## 訳注
+
+ 一旦、Conditional Conformanceの章までのみの訳としています（個人的な目的のため）
+ 公式の訳ではないことに留意していただけると幸いです。
  */
 /*:
  [次へ](@next)
